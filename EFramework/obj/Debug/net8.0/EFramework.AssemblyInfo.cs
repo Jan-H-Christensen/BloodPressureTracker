@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EFramework")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1cf2572e0e52141dc8cbf5b59c0c261fca10326e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+00c1e0792023d6909aec9e612c5d85296205a915")]
 [assembly: System.Reflection.AssemblyProductAttribute("EFramework")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EFramework")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

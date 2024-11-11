@@ -41,9 +41,6 @@ namespace EFramework.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
-                    b.Property<string>("PatientsSSN")
-                        .HasColumnType("nvarchar(10)");
-
                     b.Property<bool>("Seen")
                         .HasColumnType("bit");
 
@@ -52,7 +49,7 @@ namespace EFramework.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PatientsSSN");
+                    b.HasIndex("PatientSSN");
 
                     b.ToTable("measurementsTables");
                 });
@@ -80,9 +77,13 @@ namespace EFramework.Migrations
 
             modelBuilder.Entity("Model.Measurements", b =>
                 {
-                    b.HasOne("Model.Patients", null)
+                    b.HasOne("Model.Patients", "Patient")
                         .WithMany("Measurements")
-                        .HasForeignKey("PatientsSSN");
+                        .HasForeignKey("PatientSSN")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Patient");
                 });
 
             modelBuilder.Entity("Model.Patients", b =>

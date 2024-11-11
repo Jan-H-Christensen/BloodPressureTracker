@@ -34,23 +34,23 @@ namespace EFramework.Migrations
                     Systolic = table.Column<int>(type: "int", nullable: false),
                     Diastolic = table.Column<int>(type: "int", nullable: false),
                     PatientSSN = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
-                    Seen = table.Column<bool>(type: "bit", nullable: false),
-                    PatientsSSN = table.Column<string>(type: "nvarchar(10)", nullable: true)
+                    Seen = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_measurementsTables", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_measurementsTables_patientsTables_PatientsSSN",
-                        column: x => x.PatientsSSN,
+                        name: "FK_measurementsTables_patientsTables_PatientSSN",
+                        column: x => x.PatientSSN,
                         principalTable: "patientsTables",
-                        principalColumn: "SSN");
+                        principalColumn: "SSN",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_measurementsTables_PatientsSSN",
+                name: "IX_measurementsTables_PatientSSN",
                 table: "measurementsTables",
-                column: "PatientsSSN");
+                column: "PatientSSN");
         }
 
         /// <inheritdoc />

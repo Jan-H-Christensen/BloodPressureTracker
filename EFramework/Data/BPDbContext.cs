@@ -17,6 +17,12 @@ namespace EFramework.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Patients>()
+                .HasMany(p => p.Measurements)
+                .WithOne(m => m.Patient)
+                .HasForeignKey(m => m.PatientSSN)
+                .OnDelete(DeleteBehavior.Cascade);
+
             base.OnModelCreating(modelBuilder);
         }
     }
