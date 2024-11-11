@@ -2,9 +2,9 @@
 # Esben and Asbjørn fandt ud af dette
 
 # for the DB to be fully startet and ready for changes if any
-sleep 1
+sleep 60
 
-while ! nc -z bloodpressureDB 1433; do
+while ! nc -z bloodpressure 1433; do
   sleep 5
 done
 

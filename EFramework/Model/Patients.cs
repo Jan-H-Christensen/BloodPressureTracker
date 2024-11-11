@@ -12,14 +12,17 @@ namespace Model
     {
         [Key]
         [StringLength(10)]
-        public string SSN { get; set; }
+        [Required]
+        public string? SSN { get; set; }
 
         [StringLength(128)]
-        public string Mail { get; set; }
+        [Required]
+        public string? Mail { get; set; }
 
         [StringLength(50)]
-        public string Name { get; set; }
+        [Required]
+        public string? Name { get; set; }
 
-        public virtual ICollection<Measurements> Measurements { get; set; }
+        public virtual ICollection<Measurements>? Measurements { get; set; }
     }
 }

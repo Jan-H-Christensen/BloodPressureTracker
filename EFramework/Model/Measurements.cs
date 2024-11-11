@@ -23,7 +23,5 @@ namespace Model
         public string PatientSSN { get; set; }
 
         public bool Seen { get; set; }
-
-        public virtual Patients Patient { get; set; }
     }
 }
